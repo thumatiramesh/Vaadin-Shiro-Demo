@@ -3,6 +3,7 @@ package com.vaadinshiro.ui;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
@@ -29,6 +30,7 @@ public class WelcomeView extends VerticalLayout {
 		add(welcomeMsg);
 		horizontalLayout.add(login, register);
 		login.addClickListener(in -> UI.getCurrent().navigate("login"));
+		register.addClickListener(in -> Notification.show("Do nothings"));
 		add(horizontalLayout);
 	}
 }

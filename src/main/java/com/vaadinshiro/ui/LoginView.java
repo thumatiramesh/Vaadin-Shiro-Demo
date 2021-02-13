@@ -18,26 +18,25 @@ public class LoginView extends VerticalLayout {
 	private ShiroConfig shiroConfig;
 	
 	private VerticalLayout layout;
-	private H2 h2;
+	private H2 welcome;
+	private H2 login;
 	private TextField userName;
 	private PasswordField password;
 	private Button submit;
-	private Label label;
 	
     public LoginView() {
-    	this.label = new Label("Login");
-    	this.h2 = new H2("Welcome to Vaadin+Shiro World");
+    	this.login = new H2("Login");
+    	this.welcome = new H2("Welcome to Vaadin+Shiro World");
     	this.layout = new VerticalLayout();
     	this.userName = new TextField("Username");
     	this.password = new PasswordField("Password");
-    	this.submit = new Button("Login");
+    	this.submit = new Button("Submit");
     	
     	buildLayout();
     }
 
 	private void buildLayout() {
-		
-		layout.add(label, userName, password, submit);
+		layout.add(welcome, login, userName, password, submit);
 		add(layout);
 		
 		submit.addClickListener(click -> {
